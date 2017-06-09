@@ -10,16 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var counterLabel: UILabel!
+    var counterValue: Int = 40
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        counterLabel.text = "\(counterValue)"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func decrementPressed(_ sender: UIButton) {
+        counterValue -= 1
+        counterLabel.text = "\(counterValue)"
     }
 
-
+    @IBAction func incrementPressed(_ sender: UIButton) {
+        counterValue += 1
+        counterLabel.text = "\(counterValue)"
+    }
 }
 
